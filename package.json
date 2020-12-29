@@ -1,0 +1,58 @@
+{
+  "name": "ddun-cli",
+  "version": "0.0.1",
+  "description": "cli",
+  "main": "lib/DDun.js",
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "bin": {
+    "ddun": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AubreyDDun/ddun-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "vue",
+    "ts",
+    "jsx"
+  ],
+  "author": "aubrey",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/AubreyDDun/ddun-cli/issues"
+  },
+  "homepage": "https://github.com/AubreyDDun/ddun-cli#readme",
+  "dependencies": {
+    "commander": "^6.1.0"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^9.5.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "cross-env-shell commitlint -e $GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

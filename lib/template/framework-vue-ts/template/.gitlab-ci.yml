@@ -1,0 +1,58 @@
+image: harbor.yy.com/front_end/node:10.15
+
+stages:
+  - build
+
+cache:
+  key: ${CI_BUILD_REF_NAME}
+  paths:
+    - node_modules/
+
+variables:
+
+before_script:
+
+build-master:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+    - echo 'finish!'
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - ./dist
+  only:
+    - master
+  tags:
+    - webfe
+
+build-pre:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+    - echo 'finish!'
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - ./dist
+  only:
+    - pre
+  tags:
+    - webfe
+
+build-dev:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+    - echo 'finish!'
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - ./dist
+  only:
+    - dev
+  tags:
+    - webfe
