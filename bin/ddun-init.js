@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const initPlugin = require('../lib/plugins/command-init')
 const program = require('commander')
+const consola = require('consola')
+const initPlugin = require('../lib/plugins/command-init')
 
 program.parse(process.argv)
 
@@ -9,7 +10,7 @@ const [
 ] = program.args
 
 if (!outDir) {
-  console.error('Please provide outDir for the new program.')
+  consola.error('请输入项目名')
   process.exit(1)
 }
 

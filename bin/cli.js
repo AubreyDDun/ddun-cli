@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const consola = require('consola')
 const DDun = require('../lib/DDun')
 
 function main() {
@@ -6,8 +7,7 @@ function main() {
     const ddun = new DDun()
     ddun.run()
   } catch (error) {
-    console.error(error)
-
+    consola.error(error)
     process.exit(1)
   }
 }

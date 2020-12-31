@@ -30,20 +30,27 @@
   },
   "homepage": "https://github.com/AubreyDDun/ddun-cli#readme",
   "dependencies": {
-    "ddun-generator-framework": "^0.0.4",
-    "ddun-generator-module": "^0.0.2",
     "commander": "^6.1.0",
-    "easy-logger": "^0.0.5"
+    "consola": "^2.15.0",
+    "ddun-generator-framework": "^0.0.5",
+    "ddun-generator-module": "^0.0.3"
   },
   "devDependencies": {
-    "cross-env": "^6.0.3",
-    "eslint": "^6.7.2",
-    "babel-eslint": "^10.0.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "husky": "^4.2.5",
-    "lint-staged": "^9.5.0",
     "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0"
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-eslint": "^10.0.0",
+    "cross-env": "^6.0.3",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^9.5.0"
+  },
+  "peerDependencies": {
+    "eslint-config-airbnb": "^18.2.1"
   },
   "husky": {
     "hooks": {
@@ -57,7 +64,7 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,vue,ts,tsx}": [
+    "**/*.{js,ts}": [
       "eslint --fix",
       "git add"
     ]
@@ -73,7 +80,11 @@
       "node": true
     },
     "rules": {
-      "indent": ["error", 2],
+      "semi": "off",
+      "indent": [
+        "error",
+        2
+      ],
       "consistent-return": "off",
       "linebreak-style": "off",
       "no-param-reassign": [
