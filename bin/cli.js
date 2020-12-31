@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-const Dun = require('../lib/DDun')
+const DDun = require('../lib/DDun')
 
 function main() {
   try {
-    const dun = new Dun()
-    dun.run()
+    const ddun = new DDun()
+    ddun.run()
   } catch (error) {
     console.error(error)
 

@@ -30,10 +30,16 @@
   },
   "homepage": "https://github.com/AubreyDDun/ddun-cli#readme",
   "dependencies": {
-    "commander": "^6.1.0"
+    "ddun-generator-framework": "^0.0.4",
+    "ddun-generator-module": "^0.0.2",
+    "commander": "^6.1.0",
+    "easy-logger": "^0.0.5"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
+    "eslint": "^6.7.2",
+    "babel-eslint": "^10.0.0",
+    "eslint-config-airbnb": "^18.2.1",
     "husky": "^4.2.5",
     "lint-staged": "^9.5.0",
     "@commitlint/cli": "^8.2.0",
@@ -55,5 +61,27 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "indent": ["error", 2],
+      "consistent-return": "off",
+      "linebreak-style": "off",
+      "no-param-reassign": [
+        "error",
+        {
+          "props": false
+        }
+      ]
+    }
   }
 }
