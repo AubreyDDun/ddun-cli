@@ -1,6 +1,6 @@
 {
   "name": "ddun-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "cli",
   "main": "lib/DDun.js",
   "files": [
@@ -32,8 +32,8 @@
   "dependencies": {
     "commander": "^6.1.0",
     "consola": "^2.15.0",
-    "ddun-generator-framework": "^0.0.5",
-    "ddun-generator-module": "^0.0.3"
+    "ddun-generator-framework": "^0.0.6",
+    "ddun-generator-module": "^0.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
